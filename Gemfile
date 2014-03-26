@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.1'
 #Nokogiri fails then use NOKOGIRI_USE_SYSTEM_LIBRARIES=1 bundle install
 
 gem 'rails', '4.0.2'
@@ -26,7 +26,7 @@ group :test do
 end
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '4.0.1'
+gem 'sass-rails', "~>4.0.2"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '2.1.1'
