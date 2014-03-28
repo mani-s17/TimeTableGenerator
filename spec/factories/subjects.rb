@@ -3,5 +3,6 @@
 FactoryGirl.define do
   factory :subject do
     sequence(:name) {|n| "Subject #{n}"}
+    sequence(:code) {|n| "Sub#{n}"}
   end
 end
