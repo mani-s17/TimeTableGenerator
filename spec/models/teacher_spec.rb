@@ -7,9 +7,11 @@ describe Teacher do
     @teacher = FactoryGirl.build(:teacher, name: @name, teaching_hours: @teaching_hours)
   end
   subject { @teacher }
-  it { should be_valid }
+  it { should respond_to(:name) }
+  it { should respond_to(:teaching_hours) }
   its(:name) { should == @name }
   its(:teaching_hours) { should == @teaching_hours }
+  it { should be_valid }
 
   describe "without name" do
     before { @teacher.name = nil }
