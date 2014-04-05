@@ -11,11 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140328193140) do
+ActiveRecord::Schema.define(version: 20140402191659) do
+
+  create_table "class_groups", force: true do |t|
+    t.string   "name"
+    t.integer  "standard_id"
+    t.integer  "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "group_subjects", force: true do |t|
+    t.integer  "class_group_id"
+    t.integer  "subject_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "standards", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subject_standards", force: true do |t|
+    t.integer  "subject_id"
+    t.integer  "standard_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "subjects", force: true do |t|
     t.string   "name"
     t.string   "code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teacher_subject_standards", force: true do |t|
+    t.integer  "teacher_id"
+    t.integer  "subject_standard_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
