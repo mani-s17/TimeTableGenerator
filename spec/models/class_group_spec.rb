@@ -13,6 +13,8 @@ describe ClassGroup do
   it { should respond_to(:name) }
   it { should respond_to(:size) }
   it { should respond_to(:standard) }
+  it { should respond_to(:subjects) }
+  it { should respond_to(:group_subjects) }
   it { should be_valid }
 
   its(:name) { should == @name }
@@ -45,5 +47,21 @@ describe ClassGroup do
       it { should_not be_valid }
     end
   end
+
+
+  describe 'Group Subjects' do
+    before { @class_group.save }
+    let!(:group_subject1) { FactoryGirl.create(:group_subject, class_group: @class_group) }
+    let!(:group_subject2) { FactoryGirl.create(:group_subject, class_group: @class_group) }
+
+    it "should be present" do
+      expect(@class_group.group_subjects).to eq [group_subject1, group_subject2]
+    end
+
+    it "should have subjects" do
+      expect(@class_group.subjects).to eq [group_subject1.subject, group_subject2.subject]
+    end
+  end
+
 
 end
