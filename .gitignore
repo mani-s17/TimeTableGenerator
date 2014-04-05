@@ -17,4 +17,5 @@
 
 .sass-cache/
 .idea
+*.iml
 out
