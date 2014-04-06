@@ -12,17 +12,19 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
+#Data Seeding
+gem 'factory_girl_rails', '4.2.0'
+gem 'faker', '1.1.2'
+
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
-  gem 'factory_girl_rails', '4.2.0'
   gem "zeus", "~> 0.13.4.pre2"
 end
 
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
-  gem 'faker', '1.1.2'
 end
 
 # Use SCSS for stylesheets
