@@ -15,4 +15,12 @@ module ApiHelper
     teacher_map['standardToSubjectMap'] = standard_to_subject_map
     teacher_map
   end
+
+  def extract_teacher_map_all
+    teachers = Array.new
+    Teacher.all.each { |teacher|
+      teachers.push(extract_teacher_map(teacher))
+    }
+    teachers
+  end
 end
