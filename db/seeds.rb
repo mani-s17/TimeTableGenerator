@@ -8,9 +8,11 @@
 
 namespace :db do
   task seed: :environment do
+    require 'faker'
+
     rand = Random.new(Time.now.to_i)
     #Base entities
-    5.times { FactoryGirl.create(:teacher, teaching_hours: rand.rand(10..20)) }
+    5.times { FactoryGirl.create(:teacher, name: Faker::Name.name, teaching_hours: rand.rand(10..20)) }
     5.times { FactoryGirl.create(:subject) }
     3.times { FactoryGirl.create(:standard) }
 
