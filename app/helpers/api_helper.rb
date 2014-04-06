@@ -23,4 +23,26 @@ module ApiHelper
     }
     teachers
   end
+
+
+  def extract_class_group_map(class_group)
+    class_group_map = Hash.new
+    class_group_map['id']= class_group.id
+
+    subject_to_hour_map = Hash.new
+    class_group.group_subjects.each do |group_subject|
+      subject_to_hour_map[group_subject.subject.code] = group_subject.hours_required
+    end
+    class_group_map['subjectToHourMap'] = subject_to_hour_map
+
+    class_group_map
+  end
+
+  def extract_class_group_map_all
+    class_groups = Array.new
+    ClassGroup.all.each { |class_group|
+      class_groups.push(extract_class_group_map(class_group))
+    }
+    class_groups
+  end
 end

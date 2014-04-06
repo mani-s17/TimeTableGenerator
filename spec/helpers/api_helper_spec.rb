@@ -20,8 +20,27 @@ describe ApiHelper do
     end
 
     it "should have proper standard to subject map" do
-      mp = {1 => subjects, 2 => subjects}
-      expect(result['standardToSubjectMap']).to eq mp
+      expected_map = {1 => subjects, 2 => subjects}
+      expect(result['standardToSubjectMap']).to eq expected_map
     end
+  end
+
+  describe 'extract_class_group_map' do
+    let(:hours) { 4 }
+    before do
+      @class_group = FactoryGirl.create(:class_group_with_subjects, subjects: subjects, hours: hours)
+    end
+
+    let(:result) { extract_class_group_map(@class_group) }
+
+    it "should have proper id" do
+      expect(result['id']).to eq @class_group.id
+    end
+
+    it "should have proper subject to hour map" do
+      expected_map = {'PUN' => hours, 'SCI' => hours, 'MAT' => hours}
+      expect(result['subjectToHourMap']).to eq expected_map
+    end
+
   end
 end
