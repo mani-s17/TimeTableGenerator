@@ -11,6 +11,7 @@ describe GroupSubject do
 
   it { should respond_to(:subject) }
   it { should respond_to(:class_group) }
+  it { should respond_to(:hours_required) }
   it { should be_valid }
 
   its(:class_group) { should == @class_group }
@@ -26,4 +27,20 @@ describe GroupSubject do
     it { should_not be_valid }
   end
 
+  describe 'withouth hours_required' do
+    before { @group_subject.hours_required = nil }
+    it { should_not be_valid }
+  end
+
+  describe 'hours required' do
+    describe 'should not be negative' do
+      before { @group_subject.hours_required = -1 }
+      it { should_not be_valid }
+    end
+
+    describe 'should not be too large' do
+      before { @group_subject.hours_required = 21 }
+      it { should_not be_valid }
+    end
+  end
 end

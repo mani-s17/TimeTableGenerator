@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20140402191659) do
   create_table "group_subjects", force: true do |t|
     t.integer  "class_group_id"
     t.integer  "subject_id"
+    t.integer  "hours_required"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

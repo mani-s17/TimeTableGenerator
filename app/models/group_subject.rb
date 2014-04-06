@@ -4,4 +4,5 @@ class GroupSubject < ActiveRecord::Base
 
   validates :class_group, presence: true
   validates :subject, presence: true
+  validates :hours_required, presence: true, inclusion: 1..20
 end
