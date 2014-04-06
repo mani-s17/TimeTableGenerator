@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :group_subject do
     class_group
     subject
-    hours_required Random.rand(1..10)
+    hours_required 4
 
     factory :group_subject_with_code do
       ignore do

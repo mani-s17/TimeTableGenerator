@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :class_group do
     sequence(:name) { |n| "Group #{n}" }
     standard
-    size Random.rand(40)
+    size 40
 
     factory :class_group_with_subjects do
 

@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :teacher do
     sequence(:name) { |n| "Teacher #{n}" }
-    teaching_hours Random.rand(10)
+    teaching_hours 20
 
     # teacher_subject_standards will create data after the teacher has been created
     factory :teacher_with_subjects do
