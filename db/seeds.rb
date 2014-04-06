@@ -8,20 +8,20 @@
 
 namespace :db do
   task seed: :environment do
-
+    rand = Random.new(Time.now.to_i)
     #Base entities
-    5.times { FactoryGirl.create(:teacher) }
+    5.times { FactoryGirl.create(:teacher, teaching_hours: rand.rand(10..20)) }
     5.times { FactoryGirl.create(:subject) }
     3.times { FactoryGirl.create(:standard) }
 
     #Linkings
     Standard.all.each do |standard|
-      4.times { |n| FactoryGirl.create(:class_group, name: "CG#{n}", standard: standard) }
+      4.times { |n| FactoryGirl.create(:class_group, name: "CG#{n}", standard: standard, size: rand.rand(25..40)) }
     end
 
     ClassGroup.all.each do |group|
       Subject.all.each do |subject|
-        FactoryGirl.create(:group_subject, class_group: group, subject: subject)
+        FactoryGirl.create(:group_subject, class_group: group, subject: subject, hours_required: rand.rand(1..10))
       end
     end
 
