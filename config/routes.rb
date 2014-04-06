@@ -1,4 +1,5 @@
 TimeTableGenerator::Application.routes.draw do
+  get "api/getTimeTable"
   get "pages/home"
 
   root 'pages#home'
