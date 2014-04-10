@@ -28,6 +28,7 @@ module ApiHelper
   def extract_class_group_map(class_group)
     class_group_map = Hash.new
     class_group_map['id']= class_group.id
+    class_group_map['standardId'] = class_group.standard_id
 
     subject_to_hour_map = Hash.new
     class_group.group_subjects.each do |group_subject|
@@ -44,5 +45,15 @@ module ApiHelper
       class_groups.push(extract_class_group_map(class_group))
     }
     class_groups
+  end
+
+  def extract_api_input
+    input_map = Hash.new
+    #TODO:Read from Config
+    input_map['workingDays'] = 5
+    input_map['periodPerDay'] = 8
+    input_map['teachers'] = extract_teacher_map_all
+    input_map['classGroups'] = extract_class_group_map_all
+    input_map
   end
 end
