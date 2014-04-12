@@ -1,4 +1,6 @@
 TimeTableGenerator::Application.routes.draw do
+  resources :subjects
+
   resources :teachers
 
   get "api/getTimeTable"
