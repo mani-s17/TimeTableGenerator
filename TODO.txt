@@ -1,0 +1,3 @@
+#views
+Popup for new (teacher , subject etc)
+css correction for grid to jquery darkness
