@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20140402191659) do
 
   create_table "class_groups", force: true do |t|
     t.string   "name"
-    t.integer  "standard_id"
+    t.integer  "standard"
     t.integer  "size"
     t.datetime "created_at"
     t.datetime "updated_at"

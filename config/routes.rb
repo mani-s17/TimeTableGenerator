@@ -1,7 +1,9 @@
 TimeTableGenerator::Application.routes.draw do
+  resources :teachers
+
   get "api/getTimeTable"
   get "pages/home"
-  get "teacher/teacher"
+  get "teachers/display"
 
   root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
