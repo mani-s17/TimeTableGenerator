@@ -1,0 +1,34 @@
+<h3>Teachers</h3>
+
+<%= button_to "Add Teacher", new_teacher_path, :id => "open-contacts-dialog-btn",
+              :class => "btn btn-primary", :method => :get %>
+
+<br>
+<br>
+<br>
+
+<table id="teachers" class="display" >
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Working Hours</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @teachers.each do |teacher| %>
+      <tr>
+        <td><%= teacher.name %></td>
+        <td><%= teacher.teaching_hours %></td>
+        <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
+        <td><%= link_to 'Delete', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+<%= link_to 'New Teacher', new_teacher_path %>

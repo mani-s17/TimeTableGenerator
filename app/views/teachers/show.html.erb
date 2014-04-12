@@ -1,46 +1,14 @@
-<h3>Teachers</h3>
+<p id="notice"><%= notice %></p>
 
-<button type="button" class="btn btn-primary">Add Teacher</button>
+<p>
+  <strong>Name:</strong>
+  <%= @teacher.name %>
+</p>
 
-<br>
-<br>
-<br>
+<p>
+  <strong>Teaching hours:</strong>
+  <%= @teacher.teaching_hours %>
+</p>
 
-
-<table id="teachers" class="display" >
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Working Hours</th>
-    <th>Edit</th>
-    <th>Delete</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>Aman</td>
-    <td>33</td>
-    <td>33</td>
-    <td>33</td>
-  </tr>
-  <tr>
-    <td>Prem</td>
-    <td>33</td>
-    <td>33</td>
-    <td>33</td>
-  </tr>
-  <tr>
-    <td>Mani</td>
-    <td>33</td>
-    <td>33</td>
-    <td>33</td>
-  </tr>
-  <tr>
-    <td>Ashwini</td>
-    <td>33</td>
-    <td>33</td>
-    <td>33</td>
-  </tr>
-  </tbody>
-</table>
-
+<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
+<%= link_to 'Back', teachers_path %>
