@@ -1,7 +1,8 @@
+
 <%= form_for(@teacher) do |f| %>
   <% if @teacher.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+      <h5><%= pluralize(@teacher.errors.count, "error") %> prohibited this teacher from being saved:</h5>
 
       <ul>
       <% @teacher.errors.full_messages.each do |msg| %>
@@ -19,7 +20,8 @@
     <%= f.label :teaching_hours %><br>
     <%= f.text_field :teaching_hours %>
   </div>
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-primary" %>
   </div>
 <% end %>
