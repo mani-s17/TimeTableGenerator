@@ -28,11 +28,11 @@ class StandardsController < ApplicationController
 
     respond_to do |format|
       if @standard.save
-        format.html { redirect_to @standard, notice: 'Standard was successfully created.' }
+        format.html { redirect_to standards_url, notice: 'Standard was successfully created.' }
         format.json { render action: 'show', status: :created, location: @standard }
       else
         format.html { render action: 'new' }
-        format.json { render json: @standard.errors, status: :unprocessable_entity }
+        format.json { render json: standards_url.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,11 +42,11 @@ class StandardsController < ApplicationController
   def update
     respond_to do |format|
       if @standard.update(standard_params)
-        format.html { redirect_to @standard, notice: 'Standard was successfully updated.' }
+        format.html { redirect_to standards_url, notice: 'Standard was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @standard.errors, status: :unprocessable_entity }
+        format.json { render json: standards_url.errors, status: :unprocessable_entity }
       end
     end
   end
