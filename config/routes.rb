@@ -3,6 +3,8 @@ TimeTableGenerator::Application.routes.draw do
 
   resources :teachers
 
+  resources :standards
+
   get "api/getTimeTable"
   get "pages/home"
 

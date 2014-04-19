@@ -1,10 +1,9 @@
 $(document).ready(function() {
-    $('#teachers').dataTable(
+    $('#standards').dataTable(
         {
             "sDom": '<"H"Cfr>t<"F"ip>',
             "bJQueryUI": true
         }
+
     );
-
-
 } );

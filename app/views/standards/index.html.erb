@@ -1,0 +1,33 @@
+<h3>Classes</h3>
+
+<%= button_to "Add Class", new_standard_path, :id => "open-contacts-dialog-btn",
+              :class => "btn btn-primary", :method => :get %>
+
+<br>
+<br>
+<br>
+
+<table id="standards" class="display" >
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @standards.each do |standard| %>
+      <tr>
+        <td><%= standard.name %></td>
+        <td><%= link_to 'Edit', edit_standard_path(standard) %></td>
+        <td><%= link_to 'Delete', standard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+
+
